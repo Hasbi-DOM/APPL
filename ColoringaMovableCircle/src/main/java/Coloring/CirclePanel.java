@@ -10,6 +10,8 @@ package Coloring;
  * @author ASUS S410UN
  */
 import java.awt.*;
+import static java.awt.Color.magenta;
+import static java.awt.Color.pink;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -34,6 +36,11 @@ public class CirclePanel extends JPanel {
         JButton right = new JButton("Right");
         JButton up = new JButton("Up");
         JButton down = new JButton("Down");
+// Create buttons to change color of the circle
+        JButton blue = new JButton("Blue");
+        JButton cyan = new JButton("Cyan");
+        JButton magenta = new JButton("Magenta");
+        JButton red = new JButton("Red");
 // Add listeners to the buttons
         left.addActionListener(new MoveListener(-20, 0));
         right.addActionListener(new MoveListener(20, 0));
