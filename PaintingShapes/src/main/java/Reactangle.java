@@ -8,12 +8,17 @@
  *
  * @author ASUS S410UN
  */
-public class Reactangle {
+public class Reactangle extends Shape {
     private double length;
     private double width;
     
     public Reactangle (double l, double w){
+        super("Reactangle");
         length = l;
         width = w;
+    }
+    
+    public double area() {
+        return width * length;
     }
 }

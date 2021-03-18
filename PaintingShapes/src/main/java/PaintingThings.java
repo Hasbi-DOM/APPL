@@ -8,6 +8,7 @@
  *
  * @author ASUS S410UN
  */
+import java.text.DecimalFormat;
 public class PaintingThings {
     //-----------------------------------------
 // Creates some shapes and a Paint object
@@ -18,10 +19,13 @@ public class PaintingThings {
     public static void main(String[] args) {
         final double COVERAGE = 350;
         Paint paint = new Paint(COVERAGE);
-        Rectangle deck;
+        Reactangle deck;
         Sphere bigBall;
         Cylinder tank;
-        double deckAmt, ballAmt, tankAmt;
+        deck = new Reactangle(20, 35);
+        bigBall = new Sphere(15);
+        tank = new Cylinder(10,30);
+        double deckAmt = paint.amount(deck), ballAmt = paint.amount(bigBall), tankAmt = paint.amount(tank);
 // Instantiate the three shapes to paint
 // Compute the amount of paint needed for each shape
 // Print the amount of paint for each.
