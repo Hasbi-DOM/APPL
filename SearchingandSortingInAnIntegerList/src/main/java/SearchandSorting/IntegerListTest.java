@@ -71,6 +71,11 @@ public class IntegerListTest {
                 break;
             case 7:
                 list.sortDecreasing();
+                break;
+            case 8 :
+                int value = scan.nextInt();
+                list.binarySearch(value);
+                break;
             default:
                 System.out.println("Sorry, invalid choice");
         }
@@ -84,6 +89,10 @@ public class IntegerListTest {
         System.out.println("2: Sort the list using selection sort");
         System.out.println("3: Find an element in the list using linear search");
         System.out.println("4: Print the list");
+        System.out.println("5: Change the list values");
+        System.out.println("6: Replace the list");
+        System.out.println("7: Decreasing sort the list");
+        System.out.println("8: Search the list values");
         System.out.print("\nEnter your choice: ");
     }
 }
