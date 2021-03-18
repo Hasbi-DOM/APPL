@@ -77,4 +77,21 @@ public class Integerlist {
             list[listPosition] = newVal;
         }
     }
+   void sortDecreasing(){
+        int maxIndex;
+        for(int i = 0; i < list.length - 1; i++){
+            //find biggest element in list starting at location i
+            maxIndex = i;
+            for(int j = i + 1; j < list.length; j++){
+                if(list[j] > list[maxIndex]){
+                    maxIndex = j;
+                }
+            }
+            
+            //swap list[i] with biggest element
+            int temp = list[i];
+            list[i] = list[maxIndex];
+            list[maxIndex] = temp;
+        }
+    }
 }
