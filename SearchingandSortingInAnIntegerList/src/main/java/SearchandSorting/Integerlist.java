@@ -11,6 +11,7 @@ package SearchandSorting;
  * @author ASUS S410UN
  */
 import SearchandSorting.IntegerListTest;
+import static SearchandSorting.IntegerListTest.scan;
 import java.util.Scanner;
 
 public class Integerlist {
