@@ -11,7 +11,7 @@ package Coloring;
  */
 import java.awt.*;
 import static java.awt.Color.magenta;
-import static java.awt.Color.pink;
+import static java.awt.Color.red;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -20,6 +20,7 @@ public class CirclePanel extends JPanel {
     private final int CIRCLE_SIZE = 50;
     private int x, y;
     private Color c;
+    JButton choose = new JButton("Choose Color");
 //---------------------------------------------------------------
 // Set up circle and buttons to move it.
 //---------------------------------------------------------------
@@ -46,6 +47,18 @@ public class CirclePanel extends JPanel {
         right.addActionListener(new MoveListener(20, 0));
         up.addActionListener(new MoveListener(0, -20));
         down.addActionListener(new MoveListener(0, 20));
+        
+        blue.addActionListener(new ColorListener(Color.blue));
+        cyan.addActionListener(new ColorListener(Color.cyan));
+        choose.addActionListener(new ColorListener(null));
+        magenta.addActionListener(new ColorListener(Color.magenta));
+        red.addActionListener(new ColorListener(Color.red));
+        
+        blue.setForeground(Color.blue);
+        cyan.setForeground(Color.cyan);
+        magenta.setForeground(Color.magenta);
+        red.setForeground(Color.red);
+        
 // Need a panel to put the buttons on or they'll be on
 // top of each other.
         JPanel buttonPanel = new JPanel();
@@ -88,6 +101,23 @@ public class CirclePanel extends JPanel {
         public void actionPerformed(ActionEvent e) {
             x += dx;
             y += dy;
+            repaint();
+        }
+    }
+    private class ColorListener implements ActionListener{
+        private Color color;
+        
+        public ColorListener(Color color){
+            this.color = color;
+        }
+        
+        public void actionPerformed(ActionEvent e){
+            if(this.color == null){
+                c = JColorChooser.showDialog(choose, "Choose your color!", c);
+            }
+            else{
+                c = this.color;
+            }
             repaint();
         }
     }
