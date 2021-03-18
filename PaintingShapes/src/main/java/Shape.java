@@ -19,6 +19,6 @@ public abstract class Shape {
     
     @Override
     public String toString(){
-        return "\nShape name : ";
+        return "\nShape name : "+shapeName;
     }
 }
