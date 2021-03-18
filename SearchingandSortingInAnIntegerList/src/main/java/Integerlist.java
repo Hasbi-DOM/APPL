@@ -94,4 +94,19 @@ public class Integerlist {
             list[maxIndex] = temp;
         }
     }
+   int binarySearch(int target){
+        int min = 0, max = list.length-1, mid = 0, location = -1;
+        while(location == -1 && min <= max){
+            mid = (min + max) / 2;
+            if(target == list[mid])
+                location = mid;
+            else{
+                if (target > list[mid])
+                    max = mid - 1;
+                else
+                    min = mid + 1;
+            }
+        }
+        return location;
+    }
 }
