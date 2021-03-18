@@ -1,3 +1,5 @@
+package SearchandSorting;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,7 +10,9 @@
  *
  * @author ASUS S410UN
  */
+import SearchandSorting.IntegerListTest;
 import java.util.Scanner;
+
 public class Integerlist {
 
     int[] list; //values in the list
@@ -75,6 +79,12 @@ public class Integerlist {
         int listPosition = search(oldVal);
         if (listPosition != -1) {
             list[listPosition] = newVal;
+        }
+    }
+    void replaceAll(){
+        for(int i = 0; i < list.length; i++){
+            System.out.println("Enter the new value for list no " + i + ":");                    
+            list[i] = scan.nextInt();            
         }
     }
    void sortDecreasing(){

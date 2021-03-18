@@ -1,3 +1,5 @@
+package SearchandSorting;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -32,7 +34,7 @@ public class IntegerListTest {
 //-------------------------------------------------------
 
     public static void dispatch(int choice) {
-        int loc;
+        int loc, oldVal, newVal;
         switch (choice) {
             case 0:
                 System.out.println("Bye!");
@@ -58,6 +60,17 @@ public class IntegerListTest {
             case 4:
                 list.print();
                 break;
+            case 5:
+                System.out.println("Enter the value you want to look for : ");
+                oldVal = scan.nextInt();
+                System.out.println("Enter the new value : ");
+                newVal = scan.nextInt();
+                list.replaceFirst(oldVal, newVal);
+            case 6:
+                list.replaceAll();
+                break;
+            case 7:
+                list.sortDecreasing();
             default:
                 System.out.println("Sorry, invalid choice");
         }
