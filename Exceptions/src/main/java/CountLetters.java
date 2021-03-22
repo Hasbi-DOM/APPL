@@ -20,23 +20,25 @@ public class CountLetters {
         
         //convert to all upper case 
         word = word.toUpperCase();
-        try {
+    
         //count frequency of each letter in string 
         for (int i = 0; i < word.length(); i++) {
+            try{
             counts[word.charAt(i) - 'A']++;
             }
-        } catch (ArrayIndexOutOfBoundsException exc){
-            System.out.println("Not a Letter");
+            catch (ArrayIndexOutOfBoundsException exception){
+            System.err.println("Not a Letter: \"" + word.charAt(i) +"\"");
         
         //print frequencies
-        
+            }
+        }  
         System.out.println();
         for (int i = 0; i < counts.length; i++) {
             if (counts[i] != 0) {
                 System.out.println((char) (i + 'A') + ": " + counts[i]);
             }
         }
-        }
+        
     }
 
 }
