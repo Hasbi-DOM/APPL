@@ -8,7 +8,6 @@
  *
  * @author ASUS
  */
-import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,17 +19,18 @@ public class CopyFile {
     
     public static void main(String[] args) throws IOException 
     {
-        
         BufferedReader br;
         String line;
         Scanner scan = new Scanner(System.in);
-        
         String val = scan.nextLine();
         
         br = new BufferedReader(new FileReader("D:\\HASBI\\" + val));
+        try {
         while ((line = br.readLine()) != null) {
             System.out.println(line);
-        }
+        }   
+        }catch (FileNotFoundException e) {
+                System.out.println("File Not Found!");
+                }
     }
-
 }
