@@ -8,29 +8,34 @@
  *
  * @author ASUS
  */
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class CopyFile {
-    
-    public static void main(String[] args) throws IOException 
-    {
-        BufferedReader br;
+
+    public static void main(String[] args) throws FileNotFoundException {
+        File f;
         String line;
         Scanner scan = new Scanner(System.in);
-        String val = scan.nextLine();
-        
-        br = new BufferedReader(new FileReader("D:\\HASBI\\" + val));
+        boolean found = false;
+        String val;
+        while (!found) {
+            val = scan.nextLine();
         try {
-        while ((line = br.readLine()) != null) {
-            System.out.println(line);
-        }   
-        }catch (FileNotFoundException e) {
-                System.out.println("File Not Found!");
-                }
+            f = new File("D:\\HASBI\\" + val);
+            if (!f.exists()) {
+                throw new FileNotFoundException("File Not Found!");
+            } 
+            Scanner readfile = new Scanner(f);
+            while (readfile.hasNextLine()) {
+                line = readfile.nextLine();
+                System.out.println(line);
+            } 
+            found = true;
+        } catch (FileNotFoundException exc) {
+                    System.err.println(exc.getMessage());
+            }
+        }
     }
 }
