@@ -59,7 +59,7 @@ public class PrimePanel extends JPanel {
         // ----------------------------------------------------------- 
 
         public void actionPerformed(ActionEvent event) {
-            try {
+            
             String textNum = number.getText();
             int num = Integer.parseInt(textNum);
             String ans = "";
@@ -72,13 +72,15 @@ public class PrimePanel extends JPanel {
                 for (int i = 3; i <= num; i += 2) {
                     boolean foundDivisor = false;
                     int j = 3;
+                    try {
                     while (j < i && !foundDivisor) {
+                        
                         if (i % j == 0) {
                             foundDivisor = true;
                         } else {
                             j++;
                         }
-                    }
+                    
                     // Add i to the list if it is prime 
                     if (j == i) {
                         ans += " " + i;
@@ -86,12 +88,16 @@ public class PrimePanel extends JPanel {
                         if (count % 10 == 0) {
                             ans += "\n";
                         }
+                    }   
+                        }  
+                    } catch (NumberFormatException exc){
+                    System.out.println("Format Number is Wrong!");
+                    }
+            primeList.setText(ans);
                     }
                 }
             }
-            primeList.setText(ans);
         }
-    }
 }
     
     
