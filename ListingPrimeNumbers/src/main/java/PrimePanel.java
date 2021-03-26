@@ -24,7 +24,6 @@ public class PrimePanel extends JPanel {
     // the calculation, and a text area to display the list 
     // of primes. 
     // ---------------------------------------------------------- 
-
     public PrimePanel() {
         JLabel heading = new JLabel("Prime Number Listing");
         heading.setFont(new Font("Helvetica", Font.BOLD, 30));
@@ -46,7 +45,6 @@ public class PrimePanel extends JPanel {
 
         scrollableTextArea.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         add(scrollableTextArea);
-
     }
     // ***************************************************************** 
     // Represents a listener for the click of the button. 
@@ -57,7 +55,6 @@ public class PrimePanel extends JPanel {
         // Generates and displays a list of primes when the 
         // button is clicked. 
         // ----------------------------------------------------------- 
-
         @Override
         public void actionPerformed(ActionEvent event) {
             try {
@@ -65,14 +62,14 @@ public class PrimePanel extends JPanel {
                 textNum = number.getText();
                 int num = Integer.parseInt(textNum);
                 int count = 0;
-                String ans = "";
+                String ans;
 
                 if (num < 2) {
                     ans = "There no primes less than " + num;
                 } else {
                     ans = " " + 2;
                     count++;
-                    for (int i = 3; i <= num; i += 2) {
+                    for (int i = 3; i < num; i += 2) {
                         boolean foundDivisor = false;
                         int j = 3;
 
@@ -94,14 +91,13 @@ public class PrimePanel extends JPanel {
                             }
                         }
                     }
-                } 
+                }
                 primeList.setText(ans);
             } catch (NumberFormatException exc) {
                 JFrame message;
                 message = new JFrame();
                 JOptionPane.showMessageDialog(message, "Format Number is Wrong!");
             }
-
         }
     }
 }

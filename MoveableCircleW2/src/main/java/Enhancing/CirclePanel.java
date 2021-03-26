@@ -57,7 +57,6 @@ public class CirclePanel extends JPanel {
         this.add(buttonPanel, "South");
 
     }
-
     //--------------------------------------------------------------- 
     // Draw circle on CirclePanel 
     //--------------------------------------------------------------- 
@@ -77,7 +76,6 @@ public class CirclePanel extends JPanel {
         //--------------------------------------------------------------- 
         // Parameters tell how to move circle at click. 
         //--------------------------------------------------------------- 
-
         public MoveListener(int dx, int dy) {
             this.dx = dx;
             this.dy = dy;
@@ -85,7 +83,6 @@ public class CirclePanel extends JPanel {
         //--------------------------------------------------------------- 
         // Change x and y coordinates and repaint. 
         //--------------------------------------------------------------- 
-
         public void actionPerformed(ActionEvent e) {
             x += dx;
             y += dy;
@@ -113,10 +110,7 @@ public class CirclePanel extends JPanel {
                 down.setEnabled(true);
             } else {
                 down.setEnabled(false);
-            }
-            
-            
+            }           
         }
     }
-
 }
